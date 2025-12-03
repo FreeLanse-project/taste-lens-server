@@ -20,7 +20,7 @@ export class SendEmailHelper {
         this.mailerService
           .sendMail({
             to: sanitizedEmail,
-            subject: `Safe Mind - ${subject}`,
+            subject: `TasteLens - ${subject}`,
             template: `${join(__dirname, '../../../emails')}/${fileName}`,
             context: {
               data,

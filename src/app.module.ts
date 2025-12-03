@@ -8,11 +8,13 @@ import { APP_GUARD } from '@nestjs/core';
 import { AccountModule } from './account/account.module';
 import { AuthModule } from './auth/auth.module';
 import { MailerModule } from '@nestjs-modules/mailer';
+import { MailerConfig } from './configurations/mailer.configs';
 import { UserModule } from './user/user.module';
 import { AdminModule } from './admin/admin.module';
 
 @Module({
   imports: [
+    MailerModule.forRootAsync({ useClass: MailerConfig }),
     ConfigModule.forRoot({
       isGlobal: true,
     }),

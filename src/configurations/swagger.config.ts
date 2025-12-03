@@ -7,8 +7,8 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
  */
 export const SetupSwagger = (app: INestApplication): void => {
   const options = new DocumentBuilder()
-    .setTitle('Safe Mind API')
-    .setDescription('Safe Mind API Docs')
+    .setTitle('TasteLens API')
+    .setDescription('TasteLens API Docs')
     .addApiKey({ type: 'apiKey', name: 'X-API-KEY', in: 'header' }, 'X-API-KEY')
     .addBearerAuth(
       {
