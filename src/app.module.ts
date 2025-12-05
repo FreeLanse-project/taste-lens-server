@@ -11,6 +11,7 @@ import { MailerModule } from '@nestjs-modules/mailer';
 import { MailerConfig } from './configurations/mailer.configs';
 import { UserModule } from './user/user.module';
 import { AdminModule } from './admin/admin.module';
+import { ContactUsModule } from './contact-us/contact-us.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { AdminModule } from './admin/admin.module';
     AuthModule,
     UserModule,
     AdminModule,
+    ContactUsModule,
   ],
   controllers: [AppController],
   providers: [

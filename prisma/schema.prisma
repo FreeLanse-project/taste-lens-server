@@ -67,6 +67,18 @@ model token {
   tokens token[] @relation("token")
 }
 
+model contact_us {
+  id           Int             @id @default(autoincrement())
+  email        String
+  phone_number String?
+  message      String
+  type         contact_us_type
+
+  is_deleted Boolean   @default(false)
+  created_at DateTime  @default(now())
+  updated_at DateTime?
+}
+
 enum token_type {
   access
   refresh
@@ -76,4 +88,10 @@ enum token_type {
 enum account_type {
   admin
   user
+}
+
+enum contact_us_type {
+  general
+  support
+  technical
 }
