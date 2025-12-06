@@ -56,7 +56,7 @@ export class UserService {
     }
   }
 
-  async update(id: number, updateDoctorDto: UpdateAccountDto): Promise<User> {
+  async update(id: number, updateUserDto: UpdateAccountDto): Promise<User> {
     try {
       const user = await this.prisma.user.findUnique({
         where: { account_id: id },
@@ -68,19 +68,19 @@ export class UserService {
       }
 
       if (
-        updateDoctorDto.email ||
-        updateDoctorDto.first_name ||
-        updateDoctorDto.last_name ||
-        updateDoctorDto.phone_number
+        updateUserDto.email ||
+        updateUserDto.first_name ||
+        updateUserDto.last_name ||
+        updateUserDto.phone_number
       ) {
         await this.prisma.account.update({
           where: { id: user.account_id },
           data: {
-            email: updateDoctorDto.email || user.account.email,
-            first_name: updateDoctorDto.first_name || user.account.first_name,
-            last_name: updateDoctorDto.last_name || user.account.last_name,
+            email: updateUserDto.email || user.account.email,
+            first_name: updateUserDto.first_name || user.account.first_name,
+            last_name: updateUserDto.last_name || user.account.last_name,
             phone_number:
-              updateDoctorDto.phone_number || user.account.phone_number,
+              updateUserDto.phone_number || user.account.phone_number,
           },
         });
       }
