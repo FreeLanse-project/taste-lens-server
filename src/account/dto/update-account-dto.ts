@@ -18,7 +18,6 @@ export class UpdateAccountDto {
   email?: string;
 
   @IsOptional()
-  @IsPhoneNumber(null)
   @ApiProperty()
   phone_number?: string;
 }
