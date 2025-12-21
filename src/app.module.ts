@@ -12,6 +12,7 @@ import { MailerConfig } from './configurations/mailer.configs';
 import { UserModule } from './user/user.module';
 import { AdminModule } from './admin/admin.module';
 import { ContactUsModule } from './contact-us/contact-us.module';
+import { PlacesModule } from './places/places.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { ContactUsModule } from './contact-us/contact-us.module';
     UserModule,
     AdminModule,
     ContactUsModule,
+    PlacesModule,
   ],
   controllers: [AppController],
   providers: [

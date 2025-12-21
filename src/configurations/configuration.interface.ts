@@ -6,6 +6,7 @@ export interface EnvVariables {
 
   API_KEY: string;
   JWT_SECRET: string;
+  OPEN_AI_KEY: string;
 
   ADMIN_EMAIL: string;
   ADMIN_PASSWORD: string;
