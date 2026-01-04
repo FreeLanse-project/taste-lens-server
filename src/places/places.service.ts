@@ -43,13 +43,15 @@ export class PlaceService {
 
   async findAllAdmin(): Promise<Place[]> {
     return this.prisma.place.findMany({
-      where: { status: { in: ['pending', 'active'] } },
+      where: { status: { in: ['pending', 'active', 'rejected'] } },
+      include: { account: true },
     });
   }
 
   async findAllUser(): Promise<Place[]> {
     return this.prisma.place.findMany({
       where: { status: 'active' },
+      include: { account: true },
     });
   }
 
